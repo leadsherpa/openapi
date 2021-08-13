@@ -171,7 +171,7 @@ components:
       name: filter[address.id]
       schema:
         example: '1293384261075731499'
-        format: integer
+
         type: string
     FilterAddressByLocality:
       description: Filter by the name of the city where the address is located.
@@ -405,7 +405,7 @@ components:
       name: filter[outbound.outbound_voice_profile_id]
       schema:
         example: '1293384261075731499'
-        format: integer
+
         type: string
     FilterName:
       description: Filter by name
@@ -419,7 +419,7 @@ components:
       name: filter[outbound_voice_profile_id]
       schema:
         example: '1293384261075731499'
-        format: integer
+
         type: string
     FilterQuantity:
       description: Filter orders by how many SIM cards were ordered.
@@ -499,7 +499,7 @@ components:
       required: true
       schema:
         example: '1517907029795014409'
-        format: integer
+
         type: string
     Id:
       description: The id of the resource.
@@ -534,7 +534,7 @@ components:
       required: true
       schema:
         example: '1293384261075731499'
-        format: integer
+
         type: string
     IpId:
       description: Identifies the type of resource.
@@ -872,7 +872,7 @@ components:
       required: true
       schema:
         example: '1293384261075731499'
-        format: integer
+
         type: string
   requestBodies: {}
   responses:
@@ -2928,7 +2928,7 @@ components:
         id:
           description: Uniquely identifies the address.
           example: '1293384261075731499'
-          format: integer
+
           type: string
         last_name:
           $ref: '#/components/schemas/last_name'
@@ -3634,7 +3634,7 @@ components:
           type: integer
         id:
           example: '1293384261075731499'
-          format: integer
+
           type: string
         inbound:
           $ref: '#/components/schemas/CallControlApplicationInbound'
@@ -3723,7 +3723,7 @@ components:
         outbound_voice_profile_id:
           description: Identifies the associated outbound voice profile.
           example: '1293384261075731499'
-          format: integer
+
           type: string
       title: Call Control Application Outbound
       type: object
@@ -5702,7 +5702,7 @@ components:
         connections:
           example: '[1234567890L, 9876543210L]'
           items:
-            format: integer
+
             type: integer
           properties:
             empty:
@@ -7612,7 +7612,7 @@ components:
         id:
           description: Identifies the specific resource.
           example: 6a09cdc3-8948-47f0-aa62-74ac943d6c58
-          format: integer
+
           type: string
         outbound_voice_profile_id:
           $ref: '#/components/schemas/OutboundVoiceProfileId'
@@ -9813,7 +9813,6 @@ components:
         id:
           description: Identifies the type of resource.
           example: '1293384261075731499'
-          format: integer
           type: string
         inbound:
           $ref: '#/components/schemas/CredentialInbound'
@@ -10588,7 +10587,6 @@ components:
       properties:
         emergency_address_id:
           description: Identifies the address to be used with emergency services.
-          format: integer
           type: string
         emergency_enabled:
           default: false
@@ -11551,7 +11549,7 @@ components:
         id:
           description: Identifies the resource.
           example: '1293384261075731499'
-          format: integer
+
           type: string
         port:
           default: 5060
@@ -11638,7 +11636,7 @@ components:
         id:
           description: Identifies the resource.
           example: '1293384261075731499'
-          format: integer
+
           type: string
         inbound:
           $ref: '#/components/schemas/InboundFqdn'
@@ -12067,7 +12065,7 @@ components:
     ImmutableSetLong:
       example: '[1234567890L, 9876543210L]'
       items:
-        format: integer
+
         type: integer
       properties:
         empty:
@@ -12669,7 +12667,7 @@ components:
     IntId:
       description: Uniquely identifies the resource.
       example: '1293384261075731499'
-      format: integer
+
       title: Int ID
       type: string
     Ip:
@@ -12692,7 +12690,7 @@ components:
         id:
           description: Identifies the type of resource.
           example: '1293384261075731499'
-          format: integer
+
           type: string
         ip_address:
           description: IP adddress represented by this resource.
@@ -12803,7 +12801,7 @@ components:
         id:
           description: Identifies the type of resource.
           example: 6a09cdc3-8948-47f0-aa62-74ac943d6c58
-          format: integer
+
           type: string
         inbound:
           $ref: '#/components/schemas/InboundIp'
@@ -13267,7 +13265,7 @@ components:
       properties:
         connections:
           items:
-            format: integer
+
             type: integer
           type: array
         created_at:
@@ -13456,7 +13454,7 @@ components:
       properties:
         connections:
           items:
-            format: integer
+
             type: integer
           type: array
         directions:
@@ -13587,7 +13585,7 @@ components:
           type: string
         connections:
           items:
-            format: integer
+
             type: integer
           type: array
         created_at:
@@ -15584,7 +15582,7 @@ components:
         id:
           description: Identifies the resource.
           example: '1293384261075731499'
-          format: integer
+
           type: string
         max_destination_rate:
           description: Maximum rate (price per minute) for a Destination to be allowed
@@ -15636,7 +15634,7 @@ components:
     OutboundVoiceProfileId:
       description: Identifies the associated outbound voice profile.
       example: '1293384261075731499'
-      format: integer
+
       title: Outbound Voice Profile ID
       type: string
     PaginationMeta:
@@ -15936,7 +15934,7 @@ components:
         emergency_address_id:
           description: Identifies the emergency address associated with the phone
             number.
-          format: integer
+
           readOnly: true
           type: string
         emergency_enabled:
@@ -16079,7 +16077,7 @@ components:
         emergency_address_id:
           description: Identifies the emergency address associated with the phone
             number.
-          format: integer
+
           readOnly: true
           type: string
         emergency_enabled:
@@ -16164,7 +16162,7 @@ components:
       properties:
         emergency_address_id:
           description: Identifies the address to be used with emergency services.
-          format: integer
+
           type: string
         emergency_enabled:
           description: Indicates whether to enable emergency services on this number.
@@ -16540,7 +16538,7 @@ components:
           type: array
         id:
           description: The phone number's ID
-          format: integer
+
           type: string
         phone_number:
           description: The phone number in e164 format.
@@ -16550,7 +16548,7 @@ components:
       properties:
         id:
           description: The phone number's ID
-          format: integer
+
           type: string
         phone_number:
           description: The phone number in e164 format.
@@ -16560,7 +16558,7 @@ components:
       properties:
         id:
           description: The phone number's ID
-          format: integer
+
           type: string
         phone_number:
           description: The phone number in e164 format.
@@ -16577,7 +16575,7 @@ components:
       properties:
         emergency_address_id:
           description: Identifies the address to be used with emergency services.
-          format: integer
+
           type: string
         emergency_enabled:
           description: Indicates whether to enable emergency services on this number.
@@ -18319,7 +18317,7 @@ components:
             id:
               description: Uniquely identifies the address for the order.
               example: '1293384261075731499'
-              format: integer
+
               type: string
             locality:
               description: The name of the city where the address is located.
@@ -18742,7 +18740,7 @@ components:
         address_id:
           description: Uniquely identifies the address for the order.
           example: '1293384261075731499'
-          format: integer
+
           type: string
         quantity:
           description: The amount of SIM cards to order.
@@ -23210,7 +23208,6 @@ paths:
         required: true
         schema:
           example: '1293384261075731499'
-          format: integer
           type: string
       responses:
         '200':
@@ -23235,7 +23232,7 @@ paths:
         required: true
         schema:
           example: '1293384261075731499'
-          format: integer
+
           type: string
       responses:
         '200':
@@ -23260,7 +23257,7 @@ paths:
         required: true
         schema:
           example: '1293384261075731499'
-          format: integer
+
           type: string
       requestBody:
         content:
@@ -28629,7 +28626,7 @@ paths:
         required: false
         schema:
           example: '9102160989215728032'
-          format: integer
+
           type: string
       - description: Filter numbers via the customer_reference set.
         in: query
@@ -31455,7 +31452,7 @@ paths:
                 address_id:
                   description: Uniquely identifies the address for the order.
                   example: '1293384261075731499'
-                  format: integer
+
                   type: string
                 quantity:
                   description: The amount of SIM cards that the user would like to
