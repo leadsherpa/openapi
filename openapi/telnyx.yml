@@ -8802,7 +8802,6 @@ components:
         phone_numbers:
           description: Phone numbers to be used for hosted messaging.
           items:
-            format: E.164
             type: string
           type: array
       type: object
