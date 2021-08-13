@@ -12549,7 +12549,6 @@ components:
             properties:
               content_type:
                 description: The MIME type of the requested media.
-                format: mime-type
                 type: string
               hash_sha256:
                 description: The SHA256 hash of the requested media.
@@ -15370,7 +15369,6 @@ components:
             properties:
               content_type:
                 description: The MIME type of the requested media.
-                format: mime-type
                 nullable: true
                 type: string
               sha256:
