@@ -13151,7 +13151,7 @@ components:
         id:
           description: Uniquely identifies the managed account.
           example: f65ceda4-6522-4ad6-aede-98de83385123
-          format: UUID
+          format: uuid
           type: string
         manager_account_id:
           description: The ID of the manager account associated with the managed account.
