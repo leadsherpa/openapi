@@ -15832,7 +15832,6 @@ components:
           type: string
         phone_number:
           example: '+19705555098'
-          format: e164_phone_number
           type: string
         record_type:
           example: number_order_phone_number
@@ -16181,7 +16180,6 @@ components:
       properties:
         phone_number:
           example: '+19705555098'
-          format: e164_phone_number
           type: string
         record_type:
           example: phone_number_regulatory_requirement
@@ -17755,7 +17753,6 @@ components:
           type: string
         phone_number:
           example: '+19705555098'
-          format: e164_phone_number
           type: string
         record_type:
           example: reserved_phone_number
