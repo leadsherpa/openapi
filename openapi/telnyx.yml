@@ -8196,7 +8196,7 @@ components:
         encode_contact_header_enabled: true
         encrypted_media: SRTP
         inbound:
-          ani_number_format: +E.164
+          ani_number_format: E.164
           channel_limit: 10
           codecs:
           - G722
@@ -8329,7 +8329,7 @@ components:
       type: object
     CreateInboundIpRequest:
       example:
-        ani_number_format: +E.164
+        ani_number_format: E.164
         channel_limit: 10
         codecs: G722
         default_routing_method: sequential
@@ -8465,7 +8465,7 @@ components:
         encode_contact_header_enabled: true
         encrypted_media: SRTP
         'inbound:':
-          ani_number_format: +E.164
+          ani_number_format: E.164
           channel_limit: 10
           codecs: G722
           default_primary_ip_id: 192.168.0.0
@@ -8802,7 +8802,7 @@ components:
         phone_numbers:
           description: Phone numbers to be used for hosted messaging.
           items:
-            format: +E.164
+            format: E.164
             type: string
           type: array
       type: object
@@ -9740,7 +9740,7 @@ components:
         encrypted_media: SRTP
         id: 6a09cdc3-8948-47f0-aa62-74ac943d6c58
         inbound:
-          ani_number_format: +E.164
+          ani_number_format: E.164
           channel_limit: 10
           codecs:
           - G722
@@ -9888,7 +9888,7 @@ components:
       type: object
     CredentialInbound:
       example:
-        ani_number_format: +E.164
+        ani_number_format: E.164
         channel_limit: 10
         codecs: G722
         default_routing_method: sequential
@@ -11570,7 +11570,7 @@ components:
         encrypted_media: SRTP
         id: '1293384261075731499'
         inbound:
-          ani_number_format: +E.164
+          ani_number_format: E.164
           channel_limit: 10
           codecs:
           - G722
@@ -11973,7 +11973,7 @@ components:
           type: string
         phone_number:
           description: The messaging hosted phone number (+E.164 format)
-          format: +E.164
+          format: E.164
           type: string
         record_type:
           example: messaging_hosted_number
@@ -12065,7 +12065,7 @@ components:
       type: array
     InboundFqdn:
       example:
-        ani_number_format: +E.164
+        ani_number_format: E.164
         channel_limit: 10
         codecs:
         - G722
@@ -12200,7 +12200,7 @@ components:
       type: object
     InboundIp:
       example:
-        ani_number_format: +E.164
+        ani_number_format: E.164
         channel_limit: 10
         codecs: G722
         default_primary_ip_id: 192.168.0.0
@@ -12709,7 +12709,7 @@ components:
         encrypted_media: SRTP
         id: 6a09cdc3-8948-47f0-aa62-74ac943d6c58
         inbound:
-          ani_number_format: +E.164
+          ani_number_format: E.164
           channel_limit: 10
           codecs:
           - G722
@@ -20213,7 +20213,7 @@ components:
         encode_contact_header_enabled: true
         encrypted_media: SRTP
         inbound:
-          ani_number_format: +E.164
+          ani_number_format: E.164
           channel_limit: 10
           codecs:
           - G722
@@ -20347,7 +20347,7 @@ components:
         encode_contact_header_enabled: true
         encrypted_media: SRTP
         'inbound:':
-          ani_number_format: +E.164
+          ani_number_format: E.164
           channel_limit: 10
           codecs: G722
           default_primary_ip_id: 192.168.0.0
