@@ -3259,7 +3259,6 @@ components:
         name:
           description: A user-specified name for the billing group
           example: My billing group name
-          format: string
           type: string
         organization_id:
           description: Identifies the organization that owns the resource.
@@ -13048,7 +13047,6 @@ components:
         report_url:
           description: External url of the ledger billing group report, if the status
             is complete
-          format: string
           nullable: true
           type: string
         status:
@@ -13058,7 +13056,6 @@ components:
           - complete
           - failed
           - deleted
-          format: string
           type: string
         updated_at:
           description: ISO 8601 formatted date indicating when the resource was updated.
@@ -19175,7 +19172,6 @@ components:
         id:
           description: Identifies the resource.
           example: c215ade3-0d39-418e-94be-c5f780760199
-          format: string
           type: string
         name:
           type: string
