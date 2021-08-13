@@ -12496,7 +12496,6 @@ components:
               type: string
             currency:
               description: The ISO 4217 currency identifier.
-              format: iso4217
               type: string
           type: object
         direction:
@@ -13210,7 +13209,6 @@ components:
         currency:
           description: The ISO 4217 currency identifier.
           example: USD
-          format: iso4217
           type: string
         record_type:
           description: Identifies the type of the resource.
@@ -15321,7 +15319,6 @@ components:
               type: string
             currency:
               description: The ISO 4217 currency identifier.
-              format: iso4217
               type: string
           type: object
         direction:
@@ -21381,7 +21378,6 @@ components:
         currency:
           description: The ISO 4217 currency identifier.
           example: USD
-          format: iso4217
           type: string
         record_type:
           description: Identifies the type of the resource.
