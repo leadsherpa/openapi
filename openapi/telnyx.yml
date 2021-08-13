@@ -16283,7 +16283,6 @@ components:
           type: string
         phone_number:
           description: +E.164 formatted phone number.
-          format: e164
           readOnly: true
           type: string
         record_type:
@@ -16528,7 +16527,6 @@ components:
           type: string
         phone_number:
           description: The phone number in e164 format.
-          format: e164
           type: string
     PhoneNumbersJobPendingOperation:
       properties:
@@ -16538,7 +16536,6 @@ components:
           type: string
         phone_number:
           description: The phone number in e164 format.
-          format: e164
           type: string
     PhoneNumbersJobSuccessfulOperation:
       properties:
@@ -16548,7 +16545,6 @@ components:
           type: string
         phone_number:
           description: The phone number in e164 format.
-          format: e164
           type: string
     PhoneNumbersJobUpdateEmergencySettingsRequest:
       example:
