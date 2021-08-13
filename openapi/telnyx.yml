@@ -8635,7 +8635,6 @@ components:
           type: boolean
         from:
           description: Phone number, in +E.164 format, used to send the message.
-          format: address
           type: string
         media_urls:
           description: 'A list of media URLs. The total media size must be less than
@@ -8738,7 +8737,6 @@ components:
             sender ID.**
 
             '
-          format: address
           type: string
         media_urls:
           description: 'A list of media URLs. The total media size must be less than
@@ -9296,7 +9294,6 @@ components:
           type: boolean
         from:
           description: Phone number, in +E.164 format, used to send the message.
-          format: address
           type: string
         media_urls:
           description: 'A list of media URLs. The total media size must be less than
@@ -12473,7 +12470,6 @@ components:
               phone_number:
                 description: Receiving address (+E.164 formatted phone number or short
                   code).
-                format: address
                 type: string
               status:
                 enum:
@@ -12538,7 +12534,6 @@ components:
             phone_number:
               description: Sending address (+E.164 formatted phone number, alphanumeric
                 sender ID, or short code).
-              format: address
               type: string
             status:
               enum:
@@ -12625,7 +12620,6 @@ components:
               phone_number:
                 description: Receiving address (+E.164 formatted phone number or short
                   code).
-                format: address
                 type: string
               status:
                 enum:
@@ -15370,7 +15364,6 @@ components:
             phone_number:
               description: Sending address (+E.164 formatted phone number, alphanumeric
                 sender ID, or short code).
-              format: address
               type: string
           type: object
         id:
@@ -15460,7 +15453,6 @@ components:
               phone_number:
                 description: Receiving address (+E.164 formatted phone number or short
                   code).
-                format: address
                 type: string
               status:
                 description: The delivery status of the message.
@@ -17705,7 +17697,6 @@ components:
         to:
           description: Sending address (+E.164 formatted phone number, alphanumeric
             sender ID, or short code).
-          format: address
           type: string
         url:
           description: The original link that was sent in the message.
@@ -19455,7 +19446,6 @@ components:
     ToNumber:
       description: Receiving address (+E.164 formatted phone number or short code).
       example: +E.164
-      format: address
       type: string
     TrafficType:
       default: conversational
