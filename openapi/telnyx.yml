@@ -20004,7 +20004,7 @@ components:
         encode_contact_header_enabled: true
         encrypted_media: SRTP
         inbound:
-          ani_number_format: +E.164
+          ani_number_format: E.164
           channel_limit: 10
           codecs: G722
           default_routing_method: sequential
