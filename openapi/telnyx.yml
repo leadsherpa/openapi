@@ -876,6 +876,15 @@ components:
         type: string
   requestBodies: {}
   responses:
+    TestResponse:
+      content:
+        application/json:
+          schema:
+            properties:
+              data:
+                $ref: '#/components/schemas/Test'
+            type: object
+      description: Successful response
     AddressResponse:
       content:
         application/json:
@@ -2882,6 +2891,17 @@ components:
             type: object
       description: Successful response
   schemas:
+    Test:
+      properties:
+        meow:
+          description: Meow!
+          enum:
+          - mew
+          - meow
+          - murrr
+          example: mew
+          type: string
+
     ActivationStatus:
       description: Activation status
       enum:
@@ -22481,6 +22501,19 @@ info:
   x-endpoint-cost: light
 openapi: 3.0.0
 paths:
+  /mew:
+    get:
+      description: Meow something
+      operationId: mewMeow
+      responses:
+        '200':
+          $ref: '#/components/responses/TestResponse'
+        '422':
+          description: Bad request
+      summary: Say meow
+      tags:
+      - Test
+      x-latency-category: responsive
   /actions/bulk/telephony_credentials:
     delete:
       description: Delete several credentials in bulk.
@@ -33108,6 +33141,7 @@ security:
 servers:
 - description: Version 2.0.0 of the Telnyx API
   url: https://api.telnyx.com/v2
+  url: https://api.telnyx.com/10dlc
 tags:
 - description: Access Tokens creation
   name: Access Tokens
