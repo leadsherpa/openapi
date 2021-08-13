@@ -11972,7 +11972,6 @@ components:
           type: string
         phone_number:
           description: The messaging hosted phone number (+E.164 format)
-          format: E.164
           type: string
         record_type:
           example: messaging_hosted_number
