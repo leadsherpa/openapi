@@ -10651,7 +10651,6 @@ components:
     Error:
       properties:
         code:
-          format: int
           type: string
         detail:
           type: string
@@ -19830,7 +19829,6 @@ components:
     UnprocessableEntityError:
       properties:
         code:
-          format: int
           type: string
         detail:
           type: string
@@ -22266,7 +22264,6 @@ components:
     error:
       properties:
         code:
-          format: int
           type: string
         detail:
           type: string
@@ -28790,7 +28787,6 @@ paths:
                     items:
                       properties:
                         code:
-                          format: int
                           type: string
                         detail:
                           type: string
