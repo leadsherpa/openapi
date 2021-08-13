@@ -3664,14 +3664,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as `https`.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as `https`.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -7638,14 +7638,14 @@ components:
           description: The failover URL where webhooks related to this connection
             will be sent if sending to the primary URL fails.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           default: null
           description: The URL where webhooks related to this connection will be sent.
           example: https://example.com
-          format: url
+          format: uri
           nullable: true
           type: string
       title: Connection
@@ -7875,14 +7875,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -8090,14 +8090,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -8278,14 +8278,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -8576,14 +8576,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -8645,7 +8645,7 @@ components:
 
             **Required for MMS**'
           items:
-            format: url
+            format: uri
             type: string
           type: array
         subject:
@@ -8674,11 +8674,11 @@ components:
         webhook_failover_url:
           description: The failover URL where webhooks related to this message will
             be sent if sending to the primary URL fails.
-          format: url
+          format: uri
           type: string
         webhook_url:
           description: The URL where webhooks related to this message will be sent.
-          format: url
+          format: uri
           type: string
       required:
       - from
@@ -8748,7 +8748,7 @@ components:
 
             **Required for MMS**'
           items:
-            format: url
+            format: uri
             type: string
           type: array
         messaging_profile_id:
@@ -8785,11 +8785,11 @@ components:
         webhook_failover_url:
           description: The failover URL where webhooks related to this message will
             be sent if sending to the primary URL fails.
-          format: url
+          format: uri
           type: string
         webhook_url:
           description: The URL where webhooks related to this message will be sent.
-          format: url
+          format: uri
           type: string
       required:
       - to
@@ -8855,14 +8855,14 @@ components:
           default: ''
           description: The failover URL where webhooks related to this messaging profile
             will be sent if sending to the primary URL fails.
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_url:
           default: ''
           description: The URL where webhooks related to this messaging profile will
             be sent.
-          format: url
+          format: uri
           nullable: true
           type: string
       required:
@@ -9036,7 +9036,7 @@ components:
 
             **Required for MMS**'
           items:
-            format: url
+            format: uri
             type: string
           type: array
         messaging_profile_id:
@@ -9068,11 +9068,11 @@ components:
         webhook_failover_url:
           description: The failover URL where webhooks related to this message will
             be sent if sending to the primary URL fails.
-          format: url
+          format: uri
           type: string
         webhook_url:
           description: The URL where webhooks related to this message will be sent.
-          format: url
+          format: uri
           type: string
       required:
       - to
@@ -9306,7 +9306,7 @@ components:
 
             **Required for MMS**'
           items:
-            format: url
+            format: uri
             type: string
           type: array
         subject:
@@ -9335,11 +9335,11 @@ components:
         webhook_failover_url:
           description: The failover URL where webhooks related to this message will
             be sent if sending to the primary URL fails.
-          format: url
+          format: uri
           type: string
         webhook_url:
           description: The URL where webhooks related to this message will be sent.
-          format: url
+          format: uri
           type: string
       required:
       - from
@@ -9423,7 +9423,7 @@ components:
           description: URL for Telnyx to send requests to containing information about
             call progress events.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         status_callback_method:
           default: post
@@ -9439,7 +9439,7 @@ components:
           description: URL to which Telnyx will deliver your XML Translator webhooks
             if we get an error response from your voice_url.
           example: https://fallback.example.com
-          format: url
+          format: uri
           type: string
         voice_method:
           default: post
@@ -9453,7 +9453,7 @@ components:
         voice_url:
           description: URL to which Telnyx will deliver your XML Translator webhooks.
           example: https://example.com
-          format: url
+          format: uri
           type: string
       required:
       - friendly_name
@@ -9875,14 +9875,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -11676,14 +11676,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -12571,7 +12571,7 @@ components:
                 type: integer
               url:
                 description: The url of the media requested to be sent.
-                format: url
+                format: uri
                 type: string
             type: object
           type: array
@@ -12658,12 +12658,12 @@ components:
         webhook_failover_url:
           description: The failover URL where webhooks related to this message will
             be sent if sending to the primary URL fails.
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_url:
           description: The URL where webhooks related to this message will be sent.
-          format: url
+          format: uri
           nullable: true
           type: string
     IntId:
@@ -12852,14 +12852,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -14100,13 +14100,13 @@ components:
         webhook_failover_url:
           description: The failover URL where webhooks related to this messaging profile
             will be sent if sending to the primary URL fails.
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_url:
           description: The URL where webhooks related to this messaging profile will
             be sent.
-          format: url
+          format: uri
           nullable: true
           type: string
         whitelisted_destinations:
@@ -15285,7 +15285,7 @@ components:
             delivered_to:
               description: The webhook URL the event was delivered to.
               example: https://www.example.com/hooks
-              format: url
+              format: uri
               type: string
           type: object
       type: object
@@ -15401,7 +15401,7 @@ components:
                 type: integer
               url:
                 description: The url of the media requested to be sent.
-                format: url
+                format: uri
                 type: string
             type: object
           type: array
@@ -15498,12 +15498,12 @@ components:
         webhook_failover_url:
           description: The failover URL where webhooks related to this message will
             be sent if sending to the primary URL fails.
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_url:
           description: The URL where webhooks related to this message will be sent.
-          format: url
+          format: uri
           nullable: true
           type: string
       type: object
@@ -18364,7 +18364,7 @@ components:
         tracking_url:
           description: The URL used to get tracking information about the order.
           example: http://www.example.com/
-          format: url
+          format: uri
           type: string
         updated_at:
           description: ISO 8601 formatted date-time indicating when the resource was
@@ -19416,7 +19416,7 @@ components:
           description: URL for Telnyx to send requests to containing information about
             call progress events.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         status_callback_method:
           default: post
@@ -19434,7 +19434,7 @@ components:
           description: URL to which Telnyx will deliver your XML Translator webhooks
             if we get an error response from your voice_url.
           example: https://fallback.example.com
-          format: url
+          format: uri
           type: string
         voice_method:
           default: post
@@ -19448,7 +19448,7 @@ components:
         voice_url:
           description: URL to which Telnyx will deliver your XML Translator webhooks.
           example: https://example.com
-          format: url
+          format: uri
           type: string
       title: Texml Application
       type: object
@@ -19967,14 +19967,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -20154,14 +20154,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -20333,14 +20333,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -20491,14 +20491,14 @@ components:
             will be sent if sending to the primary URL fails. Must include a scheme,
             such as 'https'.
           example: https://failover.example.com
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_event_url:
           description: The URL where webhooks related to this connection will be sent.
             Must include a scheme, such as 'https'.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         webhook_timeout_secs:
           default: null
@@ -20632,13 +20632,13 @@ components:
         webhook_failover_url:
           description: The failover URL where webhooks related to this messaging profile
             will be sent if sending to the primary URL fails.
-          format: url
+          format: uri
           nullable: true
           type: string
         webhook_url:
           description: The URL where webhooks related to this messaging profile will
             be sent.
-          format: url
+          format: uri
           nullable: true
           type: string
         whitelisted_destinations:
@@ -21077,7 +21077,7 @@ components:
           description: URL for Telnyx to send requests to containing information about
             call progress events.
           example: https://example.com
-          format: url
+          format: uri
           type: string
         status_callback_method:
           default: post
@@ -21093,7 +21093,7 @@ components:
           description: URL to which Telnyx will deliver your XML Translator webhooks
             if we get an error response from your voice_url.
           example: https://fallback.example.com
-          format: url
+          format: uri
           type: string
         voice_method:
           default: post
@@ -21107,7 +21107,7 @@ components:
         voice_url:
           description: URL to which Telnyx will deliver your XML Translator webhooks.
           example: https://example.com
-          format: url
+          format: uri
           type: string
       required:
       - friendly_name
@@ -21839,7 +21839,7 @@ components:
         be sent if sending to the primary URL fails. Must include a scheme, such as
         'https'.
       example: https://failover.example.com
-      format: url
+      format: uri
       nullable: true
       title: Webhook Event Failover URL
       type: string
@@ -21847,7 +21847,7 @@ components:
       description: The URL where webhooks related to this connection will be sent.
         Must include a scheme, such as 'https'.
       example: https://example.com
-      format: url
+      format: uri
       title: Webhook Event URL
       type: string
     WebhookTimeoutSecs:
