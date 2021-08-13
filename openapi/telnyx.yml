@@ -18244,7 +18244,6 @@ components:
             currency:
               description: Filter by ISO 4217 currency string.
               example: USD
-              format: currency
               type: string
           type: object
         created_at:
@@ -18362,7 +18361,6 @@ components:
             currency:
               description: ISO 4217 currency string.
               example: USD
-              format: currency
               type: string
           type: object
         sim_cards_cost:
@@ -18374,7 +18372,6 @@ components:
             currency:
               description: ISO 4217 currency string.
               example: USD
-              format: currency
               type: string
           type: object
         total_cost:
@@ -18386,7 +18383,6 @@ components:
             currency:
               description: ISO 4217 currency string.
               example: USD
-              format: currency
               type: string
           type: object
       title: SIMCardOrderPreview
