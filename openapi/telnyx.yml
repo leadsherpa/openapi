@@ -492,6 +492,30 @@ components:
       schema:
         default: 'null'
         type: string
+    FilterDisplayName:
+      description: Filter by display name
+      in: query
+      name: filter[displayName]
+      schema:
+        type: string
+    FilterEntityType:
+      description: Filter by entity type
+      in: query
+      name: filter[entityType]
+      schema:
+        type: string
+    FilterState:
+      description: Filter by state
+      in: query
+      name: filter[state]
+      schema:
+        type: string
+    FilterCountry:
+      description: Filter by country
+      in: query
+      name: filter[country]
+      schema:
+        type: string
     FqdnId:
       description: Identifies the resource.
       in: path
@@ -876,6 +900,31 @@ components:
         type: string
   requestBodies: {}
   responses:
+    BrandResponse:
+      content:
+        application/json:
+          schema:
+            properties:
+              data:
+                $ref: '#/components/schemas/Brand'
+            type: object
+      description: Successful response
+    GetAllBrandsResponse:
+      content:
+        application/json:
+          schema:
+            properties:
+              records:
+                $ref: '#/components/schemas/Brand'
+                type: array
+              page:
+                description: page number of results
+                type: integer
+              totalRecords:
+                description: total results returned
+                type: integer
+            type: object
+      description: Successful response
     TestResponse:
       content:
         application/json:
@@ -2901,7 +2950,53 @@ components:
           - murrr
           example: mew
           type: string
-
+    Brand:
+      properties:
+        brandId:
+          description: unique id for brand
+          format: uuid
+          type: string
+        entityType:
+          description: Entity type behind the brand. This is the form of business establishment.
+          enum:
+          - PRIVATE_PROFIT
+          - PUBLIC_PROFIT
+          - NON_PROFIT
+          - SOLE_PROPRIETOR
+          example: PRIVATE_PROFIT
+          type: string
+        companyName:
+          description: Legal company name
+          enum:
+          - Company A Inc
+          - Company B Inc
+          - Company C Inc
+          example: Example Company Inc.
+          type: string
+        displayName:
+          description: Display or marketing name of the brand
+          enum:
+          - Company A
+          - Company B
+          - Company C
+          example: Example Company
+          type: string
+        email:
+          description: Valid email address of brand support contact.
+          format: email
+          type: string
+        website:
+          description: Brand website URL
+          format: uri
+          type: string
+        createdAt:
+          description: Datetime brand created
+          format: date-time
+          type: string
+        updatedAt:
+          description: Datetime brand updated
+          format: date-time
+          type: string
     ActivationStatus:
       description: Activation status
       enum:
@@ -22513,6 +22608,31 @@ paths:
       summary: Say meow
       tags:
       - Test
+      x-latency-category: responsive
+  /brand:
+    get:
+      description: Returns a list of your brands
+      operationId: listBrands
+      parameters:
+      - $ref: '#/components/parameters/PageNumber'
+      - $ref: '#/components/parameters/PageSize'
+      - $ref: '#/components/parameters/FilterDisplayName'
+      - $ref: '#/components/parameters/FilterEntityType'
+      - $ref: '#/components/parameters/FilterState'
+      - $ref: '#/components/parameters/FilterCountry'
+      responses:
+        '200':
+          $ref: '#/components/responses/GetAllBrandsResponse'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Resource not found
+      summary: List all brands
+      tags:
+      - Brands
+      x-endpoint-cost: medium
       x-latency-category: responsive
   /actions/bulk/telephony_credentials:
     delete:
