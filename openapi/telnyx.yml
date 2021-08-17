@@ -3040,6 +3040,7 @@ components:
           description: date created
           format: date-time
           type: string
+      type: object
     ActivationStatus:
       description: Activation status
       enum:
@@ -33531,6 +33532,7 @@ security:
 servers:
 - description: Version 2.0.0 of the Telnyx API
   url: https://api.telnyx.com/v2
+- description: Telnyx 10DLC API
   url: https://api.telnyx.com/10dlc
 tags:
 - description: Access Tokens creation
