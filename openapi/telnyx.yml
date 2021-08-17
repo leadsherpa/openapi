@@ -907,6 +907,13 @@ components:
             $ref: '#/components/schemas/Brand'
             type: object
       description: Successful response
+    BrandVettingResponse:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/BrandVetting'
+            type: object
+      description: Successful response
     GetAllBrandsResponse:
       content:
         application/json:
@@ -3009,6 +3016,30 @@ components:
       - email
       - vertical
       type: object
+    BrandVetting:
+      properties:
+        evpId:
+          $ref: '#/components/schemas/10dlc_evp_id'
+        vettingClass:
+          $ref: '#/components/schemas/10dlc_vetting_class'
+        vettingToken:
+          description: token used for vetting
+          format: uuid
+          type: string
+        vettingScore:
+          description: Vetting score for brand
+          type: integer
+          minimum: 50
+          maximum: 100
+          example: 80
+        vettedDate:
+          description: date vetted
+          format: date-time
+          type: string
+        createDate:
+          description: date created
+          format: date-time
+          type: string
     ActivationStatus:
       description: Activation status
       enum:
@@ -22292,9 +22323,13 @@ components:
       pattern: '^\d{9}$'
       example: 123456789
       type: string
+    10dlc_evp_id:
+      description: External vetting provider id for the brand
+      format: uuid
+      type: string
     10dlc_email:
       description: Valid email address of brand support contact.
-      format: email/
+      format: email
       type: string
     10dlc_entity_type:
       description: Entity type behind the brand. This is the form of business establishment.
@@ -22304,10 +22339,6 @@ components:
       - NON_PROFIT
       - SOLE_PROPRIETOR
       example: PRIVATE_PROFIT
-      type: string
-    10dlc_email:
-      description: Valid email address of brand support contact.
-      format: email
       type: string
     10dlc_ip_address:
       description: IP address of the browser requesting to create brand identity
@@ -22374,6 +22405,11 @@ components:
       - COMMUNICATION
       example: REAL_ESTATE
       type: string
+    10dlc_vetting_class:
+      description: Identifies the vetting classification
+      type: string
+      minLength: 10
+      maxLength: 10
     10dlc_website:
       description: Brand website URL
       format: uri
@@ -22841,6 +22877,30 @@ paths:
         '422':
           description: Bad request
       summary: Retrieve a brand
+      tags:
+      - Brands
+      x-latency-category: responsive
+  /brand/{id}/externalVetting:
+    get:
+      description: Retrieve a list of valid external vetting records for a supplied brand.
+      operationId: getVetting
+      parameters:
+      - description: brand ID
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/BrandVettingResponse'
+        '401':
+          description: Unauthorized
+        '404':
+          description: Resource not found
+        '422':
+          description: Bad request
+      summary: Retrieve a list of valid external vetting records for a brand
       tags:
       - Brands
       x-latency-category: responsive
