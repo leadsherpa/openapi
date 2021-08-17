@@ -2999,6 +2999,16 @@ components:
           format: date-time
           type: string
       type: object
+    BrandRequest:
+      schema:
+        $ref: '#/components/schemas/Brand'
+      required:
+      - entityType
+      - displayName
+      - country
+      - email
+      - vertical
+      type: object
     ActivationStatus:
       description: Activation status
       enum:
@@ -22789,6 +22799,26 @@ paths:
       tags:
       - Brands
       x-endpoint-cost: medium
+      x-latency-category: responsive
+    post:
+      description: Creates a new brand
+      operationId: CreateBrand
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BrandRequest'
+        description: Requested parameters to create a new Brand
+        required: true
+      responses:
+        '200':
+          $ref: '#/components/responses/BrandResponse'
+        '422':
+          description: Bad request
+      summary: Creates a new brand.
+      tags:
+      - Brands
       x-latency-category: responsive
   /brand/{id}:
     get:
