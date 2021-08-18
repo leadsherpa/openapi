@@ -541,6 +541,35 @@
         ],
         "x-endpoint-cost": "medium",
         "x-latency-category": "responsive"
+      },
+      "post": {
+        "description": "Creates a new campaign",
+        "operationId": "CreateCampaign",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CampaignCreateRequest"
+              }
+          }
+        },
+          "description": "Requested parameters to create a new Campaign",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CampaignResponse"
+          },
+          "422": {
+            "description": "Bad request"
+          }
+        },
+        "summary": "Creates a new campaign.",
+        "tags": [
+          "Brands"
+        ],
+        "x-latency-category": "responsive"
       }
     },
     "/campaign/{id}": {
@@ -20752,6 +20781,89 @@
           },
           "messageFlow": {
             "$ref": "#/components/schemas/10dlc_campaign_message_flow"
+          },
+          "numberPool": {
+            "$ref": "#/components/schemas/10dlc_number_pool"
+          },
+          "resellerId": {
+            "$ref": "#/components/schemas/10dlc_reseller_id"
+          },
+          "sample1": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "sample2": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "sample3": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "sample4": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "sample5": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "subscriberHelp": {
+            "$ref": "#/components/schemas/10dlc_subscriber_help"
+          },
+          "subscriberOptin": {
+            "$ref": "#/components/schemas/10dlc_subscriber_opt_in"
+          },
+          "subscriberOptout": {
+            "$ref": "#/components/schemas/10dlc_subscriber_opt_out"
+          },
+          "subUsecases": {
+            "$ref": "#/components/schemas/10dlc_sub_usecases"
+          },
+          "usecase": {
+            "$ref": "#/components/schemas/10dlc_usecase"
+          },
+          "vertical": {
+            "$ref": "#/components/schemas/10dlc_vertical"
+          },
+        }
+      },
+      "CampaignCreateRequest": {
+        "type": "object",
+        "properties": {
+          "affiliateMarketing": {
+            "$ref": "#/components/schemas/10dlc_affiliate_marketing"
+          },
+          "ageGated": {
+            "$ref": "#/components/schemas/10dlc_age_gated"
+          },
+          "brandId": {
+            "$ref": "#/components/schemas/10dlc_brand_id"
+          },
+          "description": {
+            "$ref": "#/components/schemas/10dlc_campaign_description"
+          },
+          "directLending": {
+            "$ref": "#/components/schemas/10dlc_direct_lending"
+          },
+          "embeddedLink": {
+            "$ref": "#/components/schemas/10dlc_embedded_link"
+          },
+          "embeddedPhone": {
+            "$ref": "#/components/schemas/10dlc_embedded_phone"
+          },
+          "helpMessage": {
+            "$ref": "#/components/schemas/10dlc_campaign_help_message"
+          },
+          "messageFlow": {
+            "$ref": "#/components/schemas/10dlc_campaign_message_flow"
+          },
+          "mnoIds": {
+            "description": "Submit campaign to given list of MNOs by MNO's network ID",
+            "type": "array",
+            "items": {
+              "type": "integer",
+            },
+            "default": [],
+            "example": [
+              12345,
+              45678
+            ]
           },
           "numberPool": {
             "$ref": "#/components/schemas/10dlc_number_pool"
