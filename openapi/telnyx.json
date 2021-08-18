@@ -543,6 +543,42 @@
         "x-latency-category": "responsive"
       }
     },
+    "/campaign/{id}": {
+      "get": {
+        "description": "Retrieve campaign details by campaignId",
+        "operationId": "getCampaign",
+        "parameters": [
+          {
+            "description": "campaign ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+              }
+          }
+        ],
+        "responses": {
+            "200": {
+              "$ref": "#/components/responses/CampaignResponse"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "404": {
+              "description": "Resource not found"
+            },
+            "422": {
+              "description": "Bad request"
+            }
+        },
+        "summary": "Retrieve a campaign",
+        "tags": [
+          "Campaigns"
+        ],
+        "x-latency-category": "responsive"
+      }
+    },
     "/actions/bulk/telephony_credentials": {
       "delete": {
         "description": "Delete several credentials in bulk.",
@@ -17284,6 +17320,17 @@
           "application/json": {
             "schema": {
               "$ref": "#/components/schemas/BrandVetting",
+                "type": "object"
+              }
+            }
+        }
+      },
+      "CampaignResponse": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Campaign",
                 "type": "object"
               }
             }
