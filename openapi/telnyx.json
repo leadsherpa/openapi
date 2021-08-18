@@ -447,6 +447,45 @@
             "Brands"
         ],
         "x-latency-category": "responsive"
+      },
+      "post": {
+        "description": "Order vetting for a brand",
+        "operationId": "OrderVetting",
+        "parameters": [
+          {
+            "description": "brand ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+                "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BrandVettingRequest"
+              }
+          }
+          },
+          "description": "Requested parameters to order vetting",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/BrandVettingResponse"
+          },
+          "422": {
+            "description": "Bad request"
+          }
+        },
+        "summary": "Creates a new brand.",
+        "tags": [
+          "Brands"
+        ],
+        "x-latency-category": "responsive"
       }
     },
     "/actions/bulk/telephony_credentials": {
@@ -20485,6 +20524,17 @@
             "format": "date-time",
             "type": "string"
           }
+        }
+      },
+      "BrandVettingRequest": {
+        "type": "object",
+        "properties": {
+          "evpId": {
+            "$ref": "#/components/schemas/10dlc_evp_id"
+          },
+          "vettingClass": {
+            "$ref": "#/components/schemas/10dlc_vetting_class"
+          },
         }
       },
       "ActivationStatus": {
