@@ -488,6 +488,61 @@
         "x-latency-category": "responsive"
       }
     },
+    "/campaign": {
+      "get": {
+        "description": "Returns a list of campaigns for a brand",
+        "operationId": "listCampaigns",
+        "parameters": [
+            {
+              "$ref": "#/components/parameters/PageNumber"
+            },
+            {
+              "$ref": "#/components/parameters/PageSize"
+            },
+            {
+              "$ref": "#/components/parameters/FilterBrandId"
+            },
+            {
+              "$ref": "#/components/parameters/FilterStatus"
+            },
+            {
+              "$ref": "#/components/parameters/FilterUsecase"
+            },
+            {
+              "$ref": "#/components/parameters/FilterVertical"
+            },
+            {
+              "$ref": "#/components/parameters/FilterResellerId"
+            },
+            {
+              "$ref": "#/components/parameters/FilterAutoRenewal"
+            },
+            {
+              "$ref": "#/components/parameters/FilterUpstreamCnpId"
+            }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/GetAllCampaignsResponse"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Resource not found"
+          }
+        },
+        "summary": "List all Campaigns",
+        "tags": [
+          "Campaigns"
+        ],
+        "x-endpoint-cost": "medium",
+        "x-latency-category": "responsive"
+      }
+    },
     "/actions/bulk/telephony_credentials": {
       "delete": {
         "description": "Delete several credentials in bulk.",
@@ -16698,6 +16753,22 @@
           "default": "null"
         }
       },
+      "FilterAutoRenewal": {
+        "description": "Filter by auto renewal",
+        "in": "query",
+        "name": "filter[autoRenewal]",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "FilterBrandId": {
+        "description": "Filter by brand id",
+        "in": "query",
+        "name": "filter[brandId]",
+        "schema": {
+          "type": "string"
+        }
+      },
       "FilterDisplayName": {
         "description": "Filter by display name",
         "in": "query",
@@ -16726,6 +16797,38 @@
         "description": "Filter by country",
         "in": "query",
         "name": "filter[country]",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "FilterResellerId": {
+        "description": "Filter by reseller id",
+        "in": "query",
+        "name": "filter[resellerId]",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "FilterUpstreamCnpId": {
+        "description": "Filter by upstream cnp id",
+        "in": "query",
+        "name": "filter[upstreamCnpId]",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "FilterUsecase": {
+        "description": "Filter by usecase",
+        "in": "query",
+        "name": "filter[usecase]",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "FilterVertical": {
+        "description": "Filter by vertical",
+        "in": "query",
+        "name": "filter[vertical]",
         "schema": {
           "type": "string"
         }
@@ -17194,6 +17297,30 @@
               "properties": {
                 "records": {
                   "$ref": "#/components/schemas/BrandListRecord",
+                  "type": "array"
+              },
+              "page": {
+                "description": "page number of results",
+                "type": "integer"
+              },
+              "totalRecords": {
+                "description": "total results returned",
+                "type": "integer"
+              }
+            },
+            "type": "object"
+            }
+          }
+        }
+      },
+      "GetAllCampaignsResponse": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "records": {
+                  "$ref": "#/components/schemas/Campaign",
                   "type": "array"
               },
               "page": {
@@ -20534,6 +20661,89 @@
           },
           "vettingClass": {
             "$ref": "#/components/schemas/10dlc_vetting_class"
+          },
+        }
+      },
+      "Campaign": {
+        "type": "object",
+        "properties": {
+          "affiliateMarketing": {
+            "$ref": "#/components/schemas/10dlc_affiliate_marketing"
+          },
+          "ageGated": {
+            "$ref": "#/components/schemas/10dlc_age_gated"
+          },
+          "autoRenewal": {
+            "$ref": "#/components/schemas/10dlc_auto_renewal"
+          },
+          "billedDate": {
+            "$ref": "#/components/schemas/10dlc_billed_date"
+          },
+          "brandId": {
+            "$ref": "#/components/schemas/10dlc_brand_id"
+          },
+          "campaignId": {
+            "$ref": "#/components/schemas/10dlc_campaign_id"
+          },
+          "createDate": {
+            "$ref": "#/components/schemas/10dlc_create_date"
+          },
+          "description": {
+            "$ref": "#/components/schemas/10dlc_campaign_description"
+          },
+          "directLending": {
+            "$ref": "#/components/schemas/10dlc_direct_lending"
+          },
+          "embeddedLink": {
+            "$ref": "#/components/schemas/10dlc_embedded_link"
+          },
+          "embeddedPhone": {
+            "$ref": "#/components/schemas/10dlc_embedded_phone"
+          },
+          "helpMessage": {
+            "$ref": "#/components/schemas/10dlc_campaign_help_message"
+          },
+          "messageFlow": {
+            "$ref": "#/components/schemas/10dlc_campaign_message_flow"
+          },
+          "numberPool": {
+            "$ref": "#/components/schemas/10dlc_number_pool"
+          },
+          "resellerId": {
+            "$ref": "#/components/schemas/10dlc_reseller_id"
+          },
+          "sample1": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "sample2": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "sample3": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "sample4": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "sample5": {
+            "$ref": "#/components/schemas/10dlc_sample"
+          },
+          "subscriberHelp": {
+            "$ref": "#/components/schemas/10dlc_subscriber_help"
+          },
+          "subscriberOptin": {
+            "$ref": "#/components/schemas/10dlc_subscriber_opt_in"
+          },
+          "subscriberOptout": {
+            "$ref": "#/components/schemas/10dlc_subscriber_opt_out"
+          },
+          "subUsecases": {
+            "$ref": "#/components/schemas/10dlc_sub_usecases"
+          },
+          "usecase": {
+            "$ref": "#/components/schemas/10dlc_usecase"
+          },
+          "vertical": {
+            "$ref": "#/components/schemas/10dlc_vertical"
           },
         }
       },
@@ -43347,6 +43557,18 @@
           }
         }
       },
+      "10dlc_affiliate_marketing": {
+        "description": "Does message content controlled by affiliate marketing other than the brand?",
+        "type": "boolean",
+        "nullable": true,
+        "default": false
+      },
+      "10dlc_age_gated": {
+        "description": "Age gated message content in campaign.",
+        "type": "boolean",
+        "nullable": true,
+        "default": false
+      },
       "10dlc_alt_business_id": {
         "description": "Alternate business identifier such as DUNS, LEI, or GIIN (optional)",
           "enum": [
@@ -43361,6 +43583,15 @@
           ""
         ],
         "example": "",
+        "type": "string"
+      },
+      "10dlc_auto_renewal": {
+        "description": "auto renewal",
+        "type": "boolean",
+      },
+      "10dlc_billed_date": {
+        "description": "date billed",
+        "format": "date-time",
         "type": "string"
       },
       "10dlc_brand_id": {
@@ -43380,6 +43611,18 @@
         "example": "BASIC_ACCOUNT",
         "type": "string"
       },
+      "10dlc_campaign_description": {
+        "description": "Summary description of this campaign",
+        "minLength": 20,
+        "maxLength": 50,
+        "example": "This describes the campaign",
+        "type": "string"
+      },
+      "10dlc_campaign_id": {
+        "description": "unique id for campaign",
+        "format": "uuid",
+        "type": "string"
+      },
       "10dlc_company_name": {
         "description": "Legal company name",
         "enum": [
@@ -43390,10 +43633,21 @@
         "example": "Example Company Inc.",
         "type": "string"
       },
+      "10dlc_create_date": {
+        "description": "date created",
+        "format": "date-time",
+        "type": "string"
+      },
       "10dlc_csp_id": {
         "description": "unique id for csp",
         "format": "uuid",
         "type": "string"
+      },
+      "10dlc_direct_lending": {
+        "description": "Direct lending or loan arrangement",
+        "type": "boolean",
+        "nullable": true,
+        "default": false
       },
       "10dlc_display_name": {
         "description": "Display or marketing name of the brand",
@@ -43410,6 +43664,18 @@
         "pattern": "^\\d{9}$",
         "example": 123456789,
         "type": "string"
+      },
+      "10dlc_embedded_link": {
+        "description": "Does message generated by the campaign include URL link in SMS?",
+        "type": "boolean",
+        "nullable": true,
+        "default": false
+      },
+      "10dlc_embedded_phone": {
+        "description": "Does message generated by the campaign include phone number in SMS?",
+        "type": "boolean",
+        "nullable": true,
+        "default": false
       },
       "10dlc_evp_id": {
         "description": "External vetting provider id for the brand",
@@ -43436,6 +43702,39 @@
         "description": "IP address of the browser requesting to create brand identity",
         "format": "ipv4",
         "example": "127.0.0.1",
+        "type": "string"
+      },
+      "10dlc_campaign_message_flow": {
+        "description": "Message flow description.",
+        "minLength": 0,
+        "maxLength": 50,
+        "example": "message flow description goes here",
+        "type": "string"
+      },
+      "10dlc_campaign_help_message": {
+        "description": "elp message of the campaign.",
+        "minLength": 0,
+        "maxLength": 50,
+        "example": "campaign help message goes here",
+        "type": "string"
+      },
+      "10dlc_number_pool": {
+        "description": "Does campaign utilize pool of phone nubers?",
+        "type": "boolean",
+        "nullable": true,
+        "default": false
+      },
+      "10dlc_reseller_id": {
+        "description": "Alphanumeric identifier of the reseller that you want to associate with this campaign.",
+        "minLength": 7,
+        "maxLength": 7,
+        "type": "string"
+      },
+      "10dlc_sample": {
+        "description": "Message sample. Some campaient tiers require 1 or more message samples",
+        "minLength": 0,
+        "maxLength": 140,
+        "example": "This is a message we're sending",
         "type": "string"
       },
       "10dlc_stock_symbol": {
@@ -43479,7 +43778,93 @@
           ],
         "example": "NASDAQ",
         "type": "string"
-       },
+      },
+      "10dlc_subscriber_help": {
+        "description": "Does campaign responds to help keyword(s)?",
+        "type": "boolean",
+        "nullable": true,
+        "default": false
+      },
+      "10dlc_subscriber_opt_in": {
+        "description": "Does campaign require subscriber to opt-in before SMS is sent to subscriber?",
+        "type": "boolean",
+        "nullable": true,
+        "default": false
+      },
+      "10dlc_subscriber_opt_out": {
+        "description": "Does campaign support subscriber opt-out keyword(s)?",
+        "type": "boolean",
+        "nullable": true,
+        "default": false
+      },
+      "10dlc_sub_usecases": {
+        "description": "Campaign sub usecases",
+        "enum": [
+          "2FA",
+          "ACCOUNT_NOTIFICATION",
+          "AGENTS_FRANCHISES",
+          "CARRIER_EXEMPT",
+          "CHARITY",
+          "CONVERSATIONAL",
+          "CUSTOMER_CARE",
+          "DELIVERY_NOTIFICATION",
+          "EMERGENCY",
+          "FRAUD_ALERT",
+          "HIGHER_EDUCATION",
+          "LOW_VOLUME",
+          "MARKETING",
+          "MANUFACTURING",
+          "MIXED",
+          "POLITICAL",
+          "POLLING_VOTING",
+          "PUBLIC_SERVICE_ANNOUNCEMENT",
+          "SECURITY_ALERT",
+          "SOCIAL",
+          "SWEEPSTAKE",
+          "SOLE_PROPRIETOR",
+          "TRIAL"
+        ],
+        "example": "MARKETING",
+        "type": "string"
+      },
+      "10dlc_universal_ein": {
+        "description": "Universal EIN of Brand, read only (optional)",
+        "enum": [
+          ""
+        ],
+        "example": "",
+        "type": "string"
+      },
+      "10dlc_usecase": {
+        "description": "Campaign usecase",
+        "enum": [
+          "2FA",
+          "ACCOUNT_NOTIFICATION",
+          "AGENTS_FRANCHISES",
+          "CARRIER_EXEMPT",
+          "CHARITY",
+          "CONVERSATIONAL",
+          "CUSTOMER_CARE",
+          "DELIVERY_NOTIFICATION",
+          "EMERGENCY",
+          "FRAUD_ALERT",
+          "HIGHER_EDUCATION",
+          "LOW_VOLUME",
+          "MARKETING",
+          "MANUFACTURING",
+          "MIXED",
+          "POLITICAL",
+          "POLLING_VOTING",
+          "PUBLIC_SERVICE_ANNOUNCEMENT",
+          "SECURITY_ALERT",
+          "SOCIAL",
+          "SWEEPSTAKE",
+          "SOLE_PROPRIETOR",
+          "TRIAL"
+        ],
+        "example": "MARKETING",
+        "type": "string"
+      },
       "10dlc_vertical": {
         "description": "Vertical or industry segment of the brand or campaign",
         "enum": [
@@ -43513,14 +43898,6 @@
       "10dlc_website": {
         "description": "Brand website URL",
         "format": "uri",
-        "type": "string"
-      },
-      "10dlc_universal_ein": {
-        "description": "Universal EIN of Brand, read only (optional)",
-        "enum": [
-          ""
-        ],
-        "example": "",
         "type": "string"
       },
       "active": {
