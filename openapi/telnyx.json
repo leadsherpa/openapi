@@ -1,4 +1,4 @@
-{
+ {
   "openapi": "3.0.0",
   "info": {
     "version": "2.0.0",
@@ -17438,7 +17438,7 @@
                   "enum": [
                     "failed",
                     "pending",
-                    "complete",
+                    "complete"
                   ],
                   "example": "complete",
                   "type": "string"
@@ -17450,7 +17450,7 @@
                   "description": "date-time updated",
                   "format": "date-time",
                   "type": "string"
-                },
+                }
               }
             }
           }
@@ -20717,8 +20717,8 @@
           }
         },
         "required": [
-          "messagingProfileId",
-        ],
+          "messagingProfileId"
+        ]
       },
       "Brand": {
         "type": "object",
@@ -20835,7 +20835,7 @@
           "country",
           "email",
           "vertical"
-        ],
+        ]
       },
       "BrandVetting": {
         "type": "object",
@@ -20878,7 +20878,7 @@
           },
           "vettingClass": {
             "$ref": "#/components/schemas/10dlc_vetting_class"
-          },
+          }
         }
       },
       "Campaign": {
@@ -20961,7 +20961,7 @@
           },
           "vertical": {
             "$ref": "#/components/schemas/10dlc_vertical"
-          },
+          }
         }
       },
       "CampaignCreateRequest": {
@@ -20998,8 +20998,8 @@
             "description": "Submit campaign to given list of MNOs by MNO's network ID",
             "type": "array",
             "items": {
-              "type": "integer",
-            },
+              "type": "integer"
+            }
             "default": [],
             "example": [
               12345,
