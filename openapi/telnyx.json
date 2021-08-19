@@ -621,7 +621,7 @@
               }
           }
         },
-          "description": "Requested parameters to assign phone/ numbers by messaging profile",
+          "description": "Requested parameters to assign phone numbers by messaging profile",
           "required": true
         },
         "responses": {
@@ -633,6 +633,42 @@
           }
         },
         "summary": "Assigns numbers to a campaign by messaging profile id",
+        "tags": [
+          "Campaigns"
+        ],
+        "x-latency-category": "responsive"
+      }
+    },
+    "/phoneNumberAssignmentByProfile/{id}": {
+      "get": {
+        "description": "Check the status of the task associated with assigning all phone numbers on a messaging profile to a campaign by taskId.",
+        "operationId": "getAssignmentStatus",
+        "parameters": [
+          {
+            "description": "task ID",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+              }
+          }
+        ],
+        "responses": {
+            "200": {
+              "$ref": "#/components/responses/AssignNumbersStatusResponse"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "404": {
+              "description": "Resource not found"
+            },
+            "422": {
+              "description": "Bad request"
+            }
+        },
+        "summary": "Retrieve a phone number assignment status by task id",
         "tags": [
           "Campaigns"
         ],
@@ -17381,6 +17417,40 @@
                 "taskId": {
                   "$ref": "#/components/schemas/10dlc_task_id"
                 }
+              }
+            }
+          }
+        }
+      },
+      "AssignNumbersStatusResponse": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "createdAt": {
+                  "description": "date-time created",
+                  "format": "date-time",
+                  "type": "string"
+                },
+                "status": {
+                  "description": "status of assigning numbers",
+                  "enum": [
+                    "failed",
+                    "pending",
+                    "complete",
+                  ],
+                  "example": "complete",
+                  "type": "string"
+                },
+                "taskId": {
+                  "$ref": "#/components/schemas/10dlc_task_id"
+                },
+                "updatededAt": {
+                  "description": "date-time updated",
+                  "format": "date-time",
+                  "type": "string"
+                },
               }
             }
           }
