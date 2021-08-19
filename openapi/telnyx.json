@@ -625,7 +625,7 @@
           "required": true
         },
         "responses": {
-          "200": {
+          "202": {
             "$ref": "#/components/responses/AssignNumbersByProfileResponse"
           },
           "422": {
@@ -17438,7 +17438,8 @@
                   "enum": [
                     "failed",
                     "pending",
-                    "complete"
+                    "processing",
+                    "completed"
                   ],
                   "example": "complete",
                   "type": "string"
@@ -20999,7 +21000,7 @@
             "type": "array",
             "items": {
               "type": "integer"
-            }
+            },
             "default": [],
             "example": [
               12345,
@@ -21044,7 +21045,7 @@
           },
           "vertical": {
             "$ref": "#/components/schemas/10dlc_vertical"
-          },
+          }
         }
       },
       "ActivationStatus": {
@@ -43887,7 +43888,7 @@
       },
       "10dlc_auto_renewal": {
         "description": "auto renewal",
-        "type": "boolean",
+        "type": "boolean"
       },
       "10dlc_billed_date": {
         "description": "date billed",
