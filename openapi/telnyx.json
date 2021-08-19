@@ -608,6 +608,37 @@
         "x-latency-category": "responsive"
       }
     },
+    "/phoneNumberAssignmentByProfile": {
+      "post": {
+        "description": "link all phone numbers associated with a Messaging Profile to a campaign",
+        "operationId": "assignNumbersByProfile",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssignNumbersByProfileRequest"
+              }
+          }
+        },
+          "description": "Requested parameters to assign phone/ numbers by messaging profile",
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AssignNumbersByProfileResponse"
+          },
+          "422": {
+            "description": "Bad request"
+          }
+        },
+        "summary": "Assigns numbers to a campaign by messaging profile id",
+        "tags": [
+          "Campaigns"
+        ],
+        "x-latency-category": "responsive"
+      }
+    },
     "/actions/bulk/telephony_credentials": {
       "delete": {
         "description": "Delete several credentials in bulk.",
@@ -17332,6 +17363,29 @@
     },
     "requestBodies": {},
     "responses": {
+      "AssignNumbersByProfileResponse": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "properties": {
+                "messagingProfileId": {
+                  "$ref": "#/components/schemas/10dlc_messaging_profile_id"
+                },
+                "tcrCampaignId": {
+                  "$ref": "#/components/schemas/10dlc_tcr_campaign_id"
+                },
+                "campaignId": {
+                  "$ref": "#/components/schemas/10dlc_campaign_id"
+                },
+                "taskId": {
+                  "$ref": "#/components/schemas/10dlc_task_id"
+                }
+              }
+            }
+          }
+        }
+      },
       "BrandResponse": {
         "description": "Successful response",
         "content": {
@@ -20579,6 +20633,23 @@
       }
     },
     "schemas": {
+      "AssignNumbersByProfileRequest": {
+        "type": "object",
+        "properties": {
+          "messagingProfileId": {
+            "$ref": "#/components/schemas/10dlc_messaging_profile_id"
+          },
+          "tcrCampaignId": {
+            "ref": "#/components/schemas/10dlc_tcr_campaign_id"
+          },
+          "campaignId": {
+            "ref": "#/components/schemas/10dlc_campaign_id"
+          }
+        },
+        "required": [
+          "messagingProfileId",
+        ],
+      },
       "Brand": {
         "type": "object",
         "properties": {
@@ -43877,6 +43948,11 @@
         "example": "campaign help message goes here",
         "type": "string"
       },
+      "10dlc_messaging_profile_id": {
+        "description": "unique id to group phones",
+        "format": "uuid",
+        "type": "string"
+      },
       "10dlc_number_pool": {
         "description": "Does campaign utilize pool of phone nubers?",
         "type": "boolean",
@@ -43984,6 +44060,17 @@
           "TRIAL"
         ],
         "example": "MARKETING",
+        "type": "string"
+      },
+      "10dlc_task_id": {
+        "description": "unique id for task to assign numbers to a campaign",
+        "format": "uuid",
+        "type": "string"
+      },
+      "10dlc_tcr_campaign_id": {
+        "description": "The TCR ID of the shared campaign you want to link to the specified messaging profile (for campaigns not created using Telnyx 10DLC services only).",
+        "minLength": 7,
+        "maxLength": 7,
         "type": "string"
       },
       "10dlc_universal_ein": {
