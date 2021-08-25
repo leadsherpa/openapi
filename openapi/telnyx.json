@@ -625,7 +625,7 @@
           "required": true
         },
         "responses": {
-          "200": {
+          "202": {
             "$ref": "#/components/responses/AssignNumbersByProfileResponse"
           },
           "422": {
@@ -17438,7 +17438,8 @@
                   "enum": [
                     "failed",
                     "pending",
-                    "complete"
+                    "processing",
+                    "completed"
                   ],
                   "example": "complete",
                   "type": "string"

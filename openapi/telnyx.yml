@@ -357,7 +357,7 @@ paths:
         description: Requested parameters to assign phone numbers by messaging profile
         required: true
       responses:
-        '200':
+        '202':
           $ref: '#/components/responses/AssignNumbersByProfileResponse'
         '422':
           description: Bad request
@@ -12279,7 +12279,8 @@ components:
                 enum:
                   - failed
                   - pending
-                  - complete
+                  - processing
+                  - completed
                 example: complete
                 type: string
               taskId:
